@@ -13,3 +13,11 @@ end
 function calcTerm(coeffient, term::Tuple{Int, Int})
   coeffient * nthPower(term[1], term[2])
 end
+
+function calcPolynomial(tuples...)
+  result = 0
+  for (tuple) in tuples
+    result += calcTerm(tuple[1], (tuple[2], tuple[3]))
+  end
+  result
+end

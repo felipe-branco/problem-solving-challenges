@@ -17,4 +17,10 @@ include("../polynomial.jl")
     @test calcTerm(3, (1, 200)) == 3
   end
 
+  @testset "calcPolynomial((coeffient, value, power)::firstTermTuple, ... , (coeffient, value, power)::lastTermTuple)" begin
+    # y = 4 + x^3 -2*x^2 + 3*x when x = 1
+    @test calcPolynomial((4,1,0), (1,1,3), (-2,1,2), (3,1,1)) == 6
+    @test calcPolynomial((8,1,0)) == 8
+  end
+
 end
