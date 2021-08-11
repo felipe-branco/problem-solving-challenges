@@ -9,3 +9,7 @@ function nthPower(x, power)
   end
   result
 end
+
+function calcTerm(coeffient, term::Tuple{Int, Int})
+  coeffient * nthPower(term[1], term[2])
+end

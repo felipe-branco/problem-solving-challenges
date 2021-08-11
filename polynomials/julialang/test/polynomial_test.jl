@@ -11,4 +11,10 @@ include("../polynomial.jl")
     @test nthPower(10,0) == 1
   end
 
+  @testset "calcTerm(coeffient, (value, power))" begin
+    @test calcTerm(0, (2, 34)) == 0
+    @test calcTerm(-1, (2, 2)) == -4
+    @test calcTerm(3, (1, 200)) == 3
+  end
+
 end
